@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MG FlowerHub - Login</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;display:flex;
+ justify-content:center;align-items:center;
+ font-family:Arial;background:#fff5f0;
+}
+.container{
+ background:white;padding:35px;width:360px;
+ border-radius:18px;box-shadow:0 5px 25px #0002;
+}
+h2{text-align:center;color:#e87532}
+input{
+ width:100%;padding:13px;margin:10px 0;
+ border:1px solid #ddd;border-radius:8px;
+}
+button{
+ width:100%;padding:13px;margin-top:12px;
+ border:0;border-radius:8px;
+ background:#e87532;color:white;
+ font-size:16px;cursor:pointer;
+}
+#message{text-align:center;margin-top:15px;font-size:14px}
+</style>
+</head>
+<body>
+<div class="container">
+<h2>🌸 MG FlowerHub</h2>
+<h3>Create Account</h3>
+
+<input id="email" type="email" placeholder="Email address">
+<input id="password" type="password" placeholder="Password">
+
+<button onclick="signup()">Sign Up</button>
+<button onclick="login()">Login</button>
+
+<p id="message"></p>
+</div>
+
+<script type="module">
+import { supabase } from './supabase.js';
+
+window.signup = async function(){
+ const email=document.getElementById('email').value;
+ const password=document.getElementById('password').value;
+ const msg=document.getElementById('message');
+
+ if(!email || !password){
+  msg.textContent='Enter email and password';
+  return;
+ }
+
+ const {data,error}=await supabase.auth.signUp({
+  email,password
+ });
+
+ if(error){
+  msg.textContent=error.message;
+ }else{
+  msg.textContent='Account created! Check your email for confirmation.';
+ }
+};
+
+window.login = async function(){
+ const email=document.getElementById('email').value;
+ const password=document.getElementById('password').value;
+ const msg=document.getElementById('message');
+
+ const {data,error}=await supabase.auth.signInWithPassword({
+  email,password
+ });
+
+ if(error){
+  msg.textContent=error.message;
+ }else{
+  window.location.href='index.html';
+ }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase.js"></script>
+</body>
+</html>

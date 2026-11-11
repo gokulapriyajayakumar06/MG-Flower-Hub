@@ -1,0 +1,814 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MG Flower Hub | Home</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#FFFAF5;
+    color:#49332F;
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* NAVIGATION */
+
+.main-nav{
+    width:100%;
+    min-height:85px;
+    padding:15px 8%;
+    background:#FFFAF5;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:9999;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    gap:20px;
+}
+
+.logo{
+    font-family:'Playfair Display',serif;
+    font-size:25px;
+    font-weight:700;
+    color:#603D38;
+    white-space:nowrap;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#49332F;
+    font-size:14px;
+    font-weight:500;
+    white-space:nowrap;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#B8757D;
+}
+
+/* HERO */
+
+.hero{
+    min-height:570px;
+    display:flex;
+    align-items:center;
+    padding:70px 10%;
+    background:
+    linear-gradient(rgba(73,51,47,0.48),rgba(73,51,47,0.48)),
+    url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1800&q=85');
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.hero-content{
+    max-width:650px;
+    width:100%;
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:55px;
+    line-height:1.3;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:16px;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    padding:14px 27px;
+    border-radius:7px;
+    margin-right:10px;
+    margin-bottom:10px;
+    font-size:14px;
+    font-weight:600;
+    transition:0.3s;
+    text-align:center;
+}
+
+.primary-btn{
+    background:#B8757D;
+    color:white;
+}
+
+.secondary-btn{
+    background:white;
+    color:#603D38;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 5px 15px rgba(0,0,0,0.12);
+}
+
+/* COMMON SECTION */
+
+section{
+    padding:75px 9%;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-heading h2{
+    font-family:'Playfair Display',serif;
+    font-size:36px;
+    color:#603D38;
+    margin-bottom:12px;
+}
+
+.section-heading p{
+    color:#987B74;
+    font-size:14px;
+    line-height:1.7;
+}
+
+/* WHY CHOOSE US */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:22px;
+}
+
+.feature-card{
+    background:white;
+    padding:30px 20px;
+    text-align:center;
+    border-radius:14px;
+    box-shadow:0 5px 20px rgba(73,51,47,0.06);
+    transition:0.3s;
+}
+
+.feature-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(73,51,47,0.10);
+}
+
+.feature-card .icon{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.feature-card h3{
+    color:#603D38;
+    font-size:17px;
+    margin-bottom:10px;
+}
+
+.feature-card p{
+    font-size:13px;
+    color:#987B74;
+    line-height:1.7;
+}
+
+/* CLASSES */
+
+.classes-section{
+    background:#F8E8E7;
+}
+
+.class-content{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:50px;
+}
+
+.class-content img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.class-text h2{
+    font-family:'Playfair Display',serif;
+    font-size:36px;
+    color:#603D38;
+    margin-bottom:20px;
+}
+
+.class-text p{
+    color:#765B55;
+    line-height:1.9;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+/* ABOUT */
+
+.about-content{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:50px;
+}
+
+.about-content img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.about-text h2{
+    font-family:'Playfair Display',serif;
+    font-size:36px;
+    color:#603D38;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    font-size:14px;
+    line-height:1.9;
+    color:#765B55;
+    margin-bottom:20px;
+}
+
+/* REVIEWS */
+
+.reviews{
+    background:#F8E8E7;
+}
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:22px;
+}
+
+.review-card{
+    background:white;
+    padding:28px;
+    border-radius:14px;
+    transition:0.3s;
+}
+
+.review-card:hover{
+    transform:translateY(-4px);
+}
+
+.stars{
+    color:#C5A16A;
+    font-size:19px;
+    margin-bottom:15px;
+}
+
+.review-card p{
+    color:#765B55;
+    font-size:13px;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.review-card h4{
+    color:#603D38;
+}
+
+/* CONTACT */
+
+.contact-section{
+    text-align:center;
+}
+
+.contact-section h2{
+    font-family:'Playfair Display',serif;
+    font-size:36px;
+    color:#603D38;
+    margin-bottom:15px;
+}
+
+.contact-section p{
+    color:#987B74;
+    margin-bottom:25px;
+    line-height:1.8;
+}
+
+/* FOOTER */
+
+footer{
+    background:#603D38;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+footer h3{
+    font-family:'Playfair Display',serif;
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+footer p{
+    font-size:13px;
+    line-height:1.8;
+}
+
+/* FLOATING ADMIN BUTTON */
+
+.admin-float{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    background:#49332F;
+    color:white;
+    text-decoration:none;
+    padding:13px 22px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:600;
+    box-shadow:0 5px 18px rgba(0,0,0,0.22);
+    z-index:99999;
+    transition:0.3s;
+    display:flex;
+    align-items:center;
+    gap:7px;
+}
+
+.admin-float:hover{
+    background:#B8757D;
+    transform:translateY(-4px);
+}
+
+/* TABLET */
+
+@media(max-width:1000px){
+
+    .main-nav{
+        padding:15px 5%;
+        flex-direction:column;
+        gap:14px;
+    }
+
+    .nav-links{
+        justify-content:center;
+        gap:15px 22px;
+    }
+
+    .features{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+    .hero{
+        min-height:500px;
+    }
+
+    .hero h1{
+        font-size:46px;
+    }
+
+    section{
+        padding:65px 6%;
+    }
+
+    .class-content,
+    .about-content{
+        gap:30px;
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .main-nav{
+        padding:14px 12px;
+        gap:12px;
+    }
+
+    .logo{
+        font-size:22px;
+        text-align:center;
+    }
+
+    .nav-links{
+        width:100%;
+        gap:10px 17px;
+    }
+
+    .nav-links a{
+        font-size:12px;
+    }
+
+    .hero{
+        min-height:480px;
+        padding:65px 7%;
+        background-position:center;
+    }
+
+    .hero h1{
+        font-size:37px;
+        line-height:1.25;
+    }
+
+    .hero p{
+        font-size:14px;
+        line-height:1.8;
+    }
+
+    .btn{
+        padding:12px 19px;
+        font-size:13px;
+        margin-right:5px;
+    }
+
+    section{
+        padding:55px 6%;
+    }
+
+    .section-heading{
+        margin-bottom:30px;
+    }
+
+    .section-heading h2{
+        font-size:29px;
+    }
+
+    .section-heading p{
+        font-size:13px;
+    }
+
+    .features{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:14px;
+    }
+
+    .feature-card{
+        padding:23px 13px;
+    }
+
+    .feature-card h3{
+        font-size:15px;
+    }
+
+    .feature-card p{
+        font-size:12px;
+    }
+
+    .class-content,
+    .about-content{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .class-content img,
+    .about-content img{
+        height:260px;
+    }
+
+    .class-text h2,
+    .about-text h2{
+        font-size:29px;
+    }
+
+    .class-text p,
+    .about-text p{
+        font-size:13px;
+    }
+
+    .review-grid{
+        grid-template-columns:1fr;
+        gap:16px;
+    }
+
+    .review-card{
+        padding:23px;
+    }
+
+    .contact-section h2{
+        font-size:29px;
+    }
+
+    .contact-section p{
+        font-size:13px;
+    }
+
+    footer h3{
+        font-size:21px;
+    }
+
+    footer p{
+        font-size:12px;
+    }
+
+    .admin-float{
+        right:13px;
+        bottom:13px;
+        padding:11px 16px;
+        font-size:12px;
+    }
+}
+
+/* SMALL MOBILE */
+
+@media(max-width:400px){
+
+    .logo{
+        font-size:20px;
+    }
+
+    .nav-links{
+        gap:9px 13px;
+    }
+
+    .nav-links a{
+        font-size:11px;
+    }
+
+    .hero{
+        min-height:450px;
+        padding:55px 6%;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:13px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .section-heading h2{
+        font-size:26px;
+    }
+
+    .class-content img,
+    .about-content img{
+        height:220px;
+    }
+
+    .admin-float{
+        padding:10px 14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav class="main-nav">
+
+    <div class="logo">MG FLOWER HUB 🌸</div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="garlands.html">Garlands</a>
+        <a href="classes.html">Classes</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Beautiful Flowers,<br>Beautiful Memories</h1>
+
+        <p>
+            Welcome to MG Flower Hub. Discover beautiful handmade
+            garlands, creative flower decorations and monthly
+            flower-making classes.
+        </p>
+
+        <a href="garlands.html" class="btn primary-btn">
+            Explore Garlands
+        </a>
+
+        <a href="classes.html" class="btn secondary-btn">
+            Join Our Classes
+        </a>
+
+    </div>
+
+</section>
+
+<!-- WHY CHOOSE US -->
+
+<section>
+
+    <div class="section-heading">
+        <h2>Why Choose MG Flower Hub?</h2>
+        <p>Making every occasion more beautiful with flowers.</p>
+    </div>
+
+    <div class="features">
+
+        <div class="feature-card">
+            <div class="icon">🌸</div>
+            <h3>Fresh Flowers</h3>
+            <p>Beautiful flower arrangements made with care.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">💐</div>
+            <h3>Handmade Garlands</h3>
+            <p>Special handmade garlands for every occasion.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">🎓</div>
+            <h3>Monthly Classes</h3>
+            <p>Learn creative flower and garland-making skills.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">❤️</div>
+            <h3>Customer Care</h3>
+            <p>We value every order and customer experience.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CLASSES -->
+
+<section class="classes-section">
+
+    <div class="class-content">
+
+        <img
+        src="https://images.unsplash.com/photo-1455659817273-f96807779a8a?auto=format&fit=crop&w=1000&q=85"
+        alt="Flower making">
+
+        <div class="class-text">
+
+            <h2>Learn the Art of Flower Making</h2>
+
+            <p>
+                Explore our monthly flower-making classes.
+                Learn creative techniques and develop your
+                flower decoration skills with us.
+            </p>
+
+            <a href="classes.html" class="btn primary-btn">
+                Explore Classes
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section>
+
+    <div class="about-content">
+
+        <div class="about-text">
+
+            <h2>About MG Flower Hub</h2>
+
+            <p>
+                MG Flower Hub is a floral boutique website
+                concept created to showcase beautiful garlands,
+                flower decorations and creative learning classes.
+            </p>
+
+            <p>
+                Explore our collections and discover the beauty
+                of flowers for your special occasions.
+            </p>
+
+            <a href="about.html" class="btn primary-btn">
+                Read More
+            </a>
+
+        </div>
+
+        <img
+        src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=1000&q=85"
+        alt="Flower decoration">
+
+    </div>
+
+</section>
+
+<!-- CUSTOMER REVIEWS -->
+
+<section class="reviews">
+
+    <div class="section-heading">
+        <h2>Customer Reviews</h2>
+        <p>What people say about our floral experience.</p>
+    </div>
+
+    <div class="review-grid">
+
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>Beautiful flower arrangements and lovely designs for special occasions.</p>
+            <h4>Happy Customer</h4>
+        </div>
+
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>The flower-making classes are interesting and creative.</p>
+            <h4>Happy Student</h4>
+        </div>
+
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>A wonderful place to explore handmade garlands and flower decorations.</p>
+            <h4>Happy Customer</h4>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact-section">
+
+    <h2>Let's Make Something Beautiful!</h2>
+
+    <p>
+        Have questions or want to know more?
+        Contact MG Flower Hub.
+    </p>
+
+    <a href="contact.html" class="btn primary-btn">
+        Contact Us
+    </a>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>MG FLOWER HUB 🌸</h3>
+
+    <p>Beautiful Flowers | Handmade Garlands | Creative Classes</p>
+
+    <p>© 2026 MG Flower Hub. All Rights Reserved.</p>
+
+</footer>
+
+<!-- FLOATING ADMIN BUTTON -->
+
+<a href="admin-login.html" class="admin-float">
+    ⚙️ Admin
+</a>
+
+<!-- SUPABASE CONNECTION -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./supabase.js"></script>
+
+</body>
+</html>
